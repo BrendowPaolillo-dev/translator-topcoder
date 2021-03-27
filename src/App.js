@@ -14,7 +14,7 @@ class App extends Component{
 
   submitText = () => {
     console.log(this.state.text)
-    // console.log(requestData(this.state.text))
+    console.log(requestData(this.state.text))
   }
 
 
@@ -22,7 +22,7 @@ class App extends Component{
     return (
       <div className="App">
         <input className ="entrada" placeholder = "Digite aqui" onChange = {(e)=> this.handleText(e.target.value)}></input>
-        <button onClick = {this.submitText}>paudothiago</button>
+        <button onClick = {this.submitText}>Enviar</button>
         <h1>{this.state.response}</h1>
       </div>
     );

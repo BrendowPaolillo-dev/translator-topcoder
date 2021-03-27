@@ -15,19 +15,28 @@ function requestData( d ){
    });
   
    var config = {
+    mode: 'no-cors',
     method: 'post',
     url: 'https://translate.google.com/translate_a/single?client=at&dt=t&dt=ld&dt=qca&dt=rm&dt=bd&dj=1&hl=%25s&ie=UTF-8&oe=UTF-8&inputm=2&otf=2&iid=1dd3b944-fa62-4b55-b330-74909a99969e&',
     headers: { 
-      'Content-Type': 'application/x-www-form-urlencoded', 
+      'Content-Type': 'application/x-www-form-urlencoded',
+      "Access-Control-Allow-Origin": "*",
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Methods': '*',
+      'Access-Control-Allow-Credentials': true
+
     },
     data : data
   };
    axios(config)
   .then(function (response) {
+    console.log("entrei")
     console.log(JSON.stringify(response.data));
-    return(JSON.stringify(response.data));
+    return(response.data);
   })
   .catch(function (error) {
+    console.log("entrei")
+
     console.log(error);
     return (error);
   });
